@@ -1,4 +1,4 @@
-package com.example.flutter_audio_recorder2;
+package com.example.flutter_audio_recorder3;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -30,7 +30,7 @@ import io.flutter.plugin.common.PluginRegistry;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /** FlutterAudioRecorderPlugin2 */
-public class FlutterAudioRecorder2Plugin implements MethodCallHandler, PluginRegistry.RequestPermissionsResultListener {
+public class FlutterAudioRecorder3Plugin implements MethodCallHandler, PluginRegistry.RequestPermissionsResultListener {
   private static final String LOG_NAME = "AndroidAudioRecorder";
   private static final int PERMISSIONS_REQUEST_RECORD_AUDIO = 200;
   private static final byte RECORDER_BPP = 16; // we use 16bit
@@ -52,11 +52,11 @@ public class FlutterAudioRecorder2Plugin implements MethodCallHandler, PluginReg
   /** Plugin registration. */
   public static void registerWith(Registrar registrar) {
 
-    final MethodChannel channel = new MethodChannel(registrar.messenger(), "flutter_audio_recorder2");
-    channel.setMethodCallHandler(new FlutterAudioRecorder2Plugin(registrar));
+    final MethodChannel channel = new MethodChannel(registrar.messenger(), "flutter_audio_recorder3");
+    channel.setMethodCallHandler(new FlutterAudioRecorder3Plugin(registrar));
   }
 
-  public FlutterAudioRecorder2Plugin(Registrar registrar) {
+  public FlutterAudioRecorder3Plugin(Registrar registrar) {
     this.registrar = registrar;
     this.registrar.addRequestPermissionsResultListener(this);
   }

@@ -1,19 +1,19 @@
-# flutter_audio_recorder2
+# flutter_audio_recorder3
 <p align="left">
-  <a href="https://pub.dartlang.org/packages/flutter_audio_recorder2">
-    <img alt="pub version" src="https://img.shields.io/pub/v/flutter_audio_recorder2.svg?style=flat-square">
+  <a href="https://pub.dartlang.org/packages/flutter_audio_recorder3">
+    <img alt="pub version" src="https://img.shields.io/pub/v/flutter_audio_recorder3.svg?style=flat-square">
   </a>
 </p>
 
 English
 
-Flutter Audio Record 2 Plugin that supports `Record` `Pause` `Resume` `Stop` and provide access to audio level metering properties `average power` `peak power`
+Flutter Audio Record 3 Plugin that supports `Record` `Pause` `Resume` `Stop` and provide access to audio level metering properties `average power` `peak power`
 #### Works for both `Android` and `iOS`
 
 <img src="https://user-images.githubusercontent.com/10917606/64927086-b2bcda00-d838-11e9-9ab8-bad78a95f02c.gif" width="30%" height="30%" />
 
 ## Installation
-add `flutter_audio_recorder2` to your `pubspec.yaml`
+add `flutter_audio_recorder3` to your `pubspec.yaml`
 
 ## iOS Permission
 1. Add usage description to Info.plist
@@ -46,25 +46,25 @@ Recommended API Usage: `hasPermission` => `init` > `start` -> (`pause` <-> `resu
 
 #### Always check permission first(it will request permission if permission has not been set to true/false yet, otherwise it will return the result of recording permission)
 ```
-bool hasPermission = await FlutterAudioRecorder2.hasPermissions;
+bool hasPermission = await FlutterAudioRecorder3.hasPermissions;
 ```
 
 #### `Initialize` (run this before `start`, so we could check if file with given name already exists)
 ```
-var recorder = FlutterAudioRecorder2("file_path.mp4"); // .wav .aac .m4a
+var recorder = FlutterAudioRecorder3("file_path.mp4"); // .wav .aac .m4a
 await recorder.initialized;
 ```
 
 or
 
 ```
-var recorder = FlutterAudioRecorder2("file_path", audioFormat: AudioFormat.AAC); // or AudioFormat.WAV
+var recorder = FlutterAudioRecorder3("file_path", audioFormat: AudioFormat.AAC); // or AudioFormat.WAV
 await recorder.initialized;
 ```
 
 ##### Sample Rate
 ```
-var recorder = FlutterAudioRecorder2("file_path", audioFormat: AudioFormat.AAC, sampleRate: 22000); // sampleRate is 16000 by default
+var recorder = FlutterAudioRecorder3("file_path", audioFormat: AudioFormat.AAC, sampleRate: 22000); // sampleRate is 16000 by default
 await recorder.initialized;
 ```
 

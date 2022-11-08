@@ -6,7 +6,7 @@ import 'package:file/file.dart';
 import 'package:file/local.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_audio_recorder2/flutter_audio_recorder2.dart';
+import 'package:flutter_audio_recorder3/flutter_audio_recorder3.dart';
 import 'package:path_provider/path_provider.dart';
 
 void main() {
@@ -36,14 +36,15 @@ class _MyAppState extends State<MyApp> {
 class RecorderExample extends StatefulWidget {
   final LocalFileSystem localFileSystem;
 
-  RecorderExample({localFileSystem}) : this.localFileSystem = localFileSystem ?? LocalFileSystem();
+  RecorderExample({localFileSystem})
+      : this.localFileSystem = localFileSystem ?? LocalFileSystem();
 
   @override
   State<StatefulWidget> createState() => new RecorderExampleState();
 }
 
 class RecorderExampleState extends State<RecorderExample> {
-  FlutterAudioRecorder2? _recorder;
+  FlutterAudioRecorder3? _recorder;
   Recording? _current;
   RecordingStatus _currentStatus = RecordingStatus.Unset;
 
@@ -97,19 +98,19 @@ class RecorderExampleState extends State<RecorderExample> {
                       child: _buildText(_currentStatus),
                       style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all<Color>(
-                            Colors.lightBlue,
-                          )),
+                        Colors.lightBlue,
+                      )),
                     ),
                   ),
                   new TextButton(
                     onPressed:
-                    _currentStatus != RecordingStatus.Unset ? _stop : null,
+                        _currentStatus != RecordingStatus.Unset ? _stop : null,
                     child:
-                    new Text("Stop", style: TextStyle(color: Colors.white)),
+                        new Text("Stop", style: TextStyle(color: Colors.white)),
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                          Colors.blueAccent.withOpacity(0.5),
-                        )),
+                      Colors.blueAccent.withOpacity(0.5),
+                    )),
                   ),
                   SizedBox(
                     width: 8,
@@ -117,11 +118,11 @@ class RecorderExampleState extends State<RecorderExample> {
                   new TextButton(
                     onPressed: onPlayAudio,
                     child:
-                    new Text("Play", style: TextStyle(color: Colors.white)),
+                        new Text("Play", style: TextStyle(color: Colors.white)),
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                          Colors.blueAccent.withOpacity(0.5),
-                        )),
+                      Colors.blueAccent.withOpacity(0.5),
+                    )),
                   ),
                 ],
               ),
@@ -142,7 +143,7 @@ class RecorderExampleState extends State<RecorderExample> {
 
   _init() async {
     try {
-      bool hasPermission = await FlutterAudioRecorder2.hasPermissions ?? false;
+      bool hasPermission = await FlutterAudioRecorder3.hasPermissions ?? false;
 
       if (hasPermission) {
         String customPath = '/flutter_audio_recorder_';
@@ -163,7 +164,7 @@ class RecorderExampleState extends State<RecorderExample> {
         // .mp4 .m4a .aac <---> AudioFormat.AAC
         // AudioFormat is optional, if given value, will overwrite path extension when there is conflicts.
         _recorder =
-            FlutterAudioRecorder2(customPath, audioFormat: AudioFormat.WAV);
+            FlutterAudioRecorder3(customPath, audioFormat: AudioFormat.WAV);
 
         await _recorder!.initialized;
         // after initialization

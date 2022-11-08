@@ -5,3 +5,7 @@
 ## 0.0.2
 
 * fix: wrong wave file header #1
+
+## 0.0.3
+
+* fix: fix versions and formatted files.

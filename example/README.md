@@ -1,6 +1,6 @@
-# flutter_audio_recorder2_example
+# flutter_audio_recorder3_example
 
-Demonstrates how to use the flutter_audio_recorder2 plugin.
+Demonstrates how to use the flutter_audio_recorder3 plugin.
 
 ## Getting Started
 

@@ -2,7 +2,7 @@ import Flutter
 import UIKit
 import AVFoundation
 
-public class SwiftFlutterAudioRecorder2Plugin: NSObject, FlutterPlugin, AVAudioRecorderDelegate {
+public class SwiftFlutterAudioRecorder3Plugin: NSObject, FlutterPlugin, AVAudioRecorderDelegate {
     // status - unset, initialized, recording, paused, stopped
     var status = "unset"
     var hasPermissions = false
@@ -15,8 +15,8 @@ public class SwiftFlutterAudioRecorder2Plugin: NSObject, FlutterPlugin, AVAudioR
     var audioRecorder: AVAudioRecorder!
 
     public static func register(with registrar: FlutterPluginRegistrar) {
-        let channel = FlutterMethodChannel(name: "flutter_audio_recorder2", binaryMessenger: registrar.messenger())
-        let instance = SwiftFlutterAudioRecorder2Plugin()
+        let channel = FlutterMethodChannel(name: "flutter_audio_recorder3", binaryMessenger: registrar.messenger())
+        let instance = SwiftFlutterAudioRecorder3Plugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
 
