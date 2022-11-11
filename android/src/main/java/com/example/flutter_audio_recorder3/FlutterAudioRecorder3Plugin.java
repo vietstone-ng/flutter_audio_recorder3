@@ -1,4 +1,4 @@
-package com.example.flutter_audio_recorder3;
+package android.src.main.java.com.example.flutter_audio_recorder3;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
