@@ -131,10 +131,10 @@
       "name": "flutter_audio_recorder3",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.18"
     }
   ],
-  "generated": "2022-11-08T17:04:12.718485Z",
+  "generated": "2022-11-12T02:03:16.023754Z",
   "generator": "pub",
   "generatorVersion": "2.18.2"
 }
