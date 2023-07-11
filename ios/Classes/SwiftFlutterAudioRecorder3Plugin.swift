@@ -64,6 +64,10 @@ public class SwiftFlutterAudioRecorder3Plugin: NSObject, FlutterPlugin, AVAudioR
                 AVNumberOfChannelsKey: 1,
                 AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
             ]
+            
+            if settings[AVFormatIDKey] == Int(kAudioFormatLinearPCM) {
+                settings[AVLinearPCMBitDepthKey] = 8
+            }
 
             do {
                 #if swift(>=4.2)
